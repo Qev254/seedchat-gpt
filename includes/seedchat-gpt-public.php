@@ -4,11 +4,11 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// Enqueue styles and scripts
+// Enqueue styles and scripts trySeedChat-GPT
 function seedchat_gpt_enqueue_scripts() {
-    wp_enqueue_style('seedchat-gpt-style', plugin_dir_url(__FILE__) . '../assets/css/SeedChat-GPT.css');
+    wp_enqueue_style('seedchat-gpt-style', plugin_dir_url(__FILE__) . '../assets/css/seedchat-gpt.css');
     wp_enqueue_script('jquery');
-    wp_enqueue_script('seedchat-gpt-script', plugin_dir_url(__FILE__) . '../assets/js/SeedChat-GPT.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('seedchat-gpt-script', plugin_dir_url(__FILE__) . '../assets/js/seedchat-gpt.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'seedchat_gpt_enqueue_scripts');
 
