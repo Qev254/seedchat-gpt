@@ -8,11 +8,15 @@
 
 // Enqueue styles and scripts
 function seedchat_gpt_enqueue_scripts() {
+    // Enqueue CSS file
     wp_enqueue_style('seedchat-gpt-style', plugin_dir_url(__FILE__) . 'assets/css/SeedChat-GPT.css');
+    
+    // Enqueue jQuery and JS file
     wp_enqueue_script('jquery');
     wp_enqueue_script('seedchat-gpt-script', plugin_dir_url(__FILE__) . 'assets/js/SeedChat-GPT.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'seedchat_gpt_enqueue_scripts');
+
 
 // Chatbot shortcode
 function seedchat_gpt_chatbot_shortcode() {
