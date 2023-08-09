@@ -21,22 +21,36 @@ jQuery(document).ready(function ($) {
     }
 
     // Handle user input
-    submitButton.on('click', function () {
+    submitButton.on('click', async function () {
         var userMessage = messageInput.val().trim();
         if (userMessage !== '') {
             appendMessage(userMessage, 'user');
             messageInput.val('');
-
-            // Call the API to get chatbot response (replace with your API endpoint)
-            // Example: $.post('your_api_url', { message: userMessage }, function (response) { ... });
-
-            // For now, let's simulate a bot response
-            var botResponse = 'I understand. Please wait while I fetch the information.';
-            setTimeout(function () {
-                appendMessage(botResponse, 'bot');
-            }, 1000);
+    
+            try {
+                // Make an API call to the ChatGPT API
+                const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+                    messages: [{ role: 'user', content: userMessage }],
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': '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', // Replace with your actual API key
+                    },
+                });
+    
+                // Get the bot's reply from the API response
+                const botReply = response.data.choices[0].message.content;
+    
+                // Display the bot's reply after a delay
+                setTimeout(function () {
+                    appendMessage(botReply, 'bot');
+                }, 1000);
+            } catch (error) {
+                console.error('Error fetching chatbot response:', error);
+            }
         }
     });
+    
 
     // Initialize the chatbot on page load
     initializeChatbot();
