@@ -25,6 +25,16 @@ function seedchat_gpt_display_chatbot() {
     <?php
 }
 
+// API endpoint for chatbot interaction
+function seedchat_gpt_api_endpoint() {
+    // Define the endpoint URL
+    $endpoint_url = 'https://api.openai.com/v1/chat/completions';
+
+    // Return the endpoint URL
+    return $endpoint_url;
+}
+
+
 // Create shortcode for displaying chatbot
 function seedchat_gpt_chatbot_shortcode() {
     ob_start();
