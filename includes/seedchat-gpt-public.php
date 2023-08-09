@@ -12,6 +12,16 @@ function seedchat_gpt_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'seedchat_gpt_enqueue_scripts');
 
+
+// API endpoint for chatbot interaction
+function seedchat_gpt_api_endpoint() {
+    // Define the endpoint URL
+    $endpoint_url = 'https://api.openai.com/v1/chat/completions';
+
+    // Return the endpoint URL
+    return $endpoint_url;
+}
+
 // Display chatbot interface
 function seedchat_gpt_display_chatbot() {
     ?>
@@ -23,15 +33,6 @@ function seedchat_gpt_display_chatbot() {
         </div>
     </div>
     <?php
-}
-
-// API endpoint for chatbot interaction
-function seedchat_gpt_api_endpoint() {
-    // Define the endpoint URL
-    $endpoint_url = 'https://api.openai.com/v1/chat/completions';
-
-    // Return the endpoint URL
-    return $endpoint_url;
 }
 
 
