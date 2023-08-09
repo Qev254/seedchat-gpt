@@ -36,17 +36,16 @@ jQuery(document).ready(function ($) {
                         'Authorization': 'Bearer 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', // Replace with your actual API key
                     },
                 });
-
+            
                 // Get the bot's reply from the API response
                 const botReply = response.data.choices[0].message.content;
-
-                // Display the bot's reply after a delay
-                setTimeout(function () {
-                    appendMessage(botReply, 'bot');
-                }, 1000);
+            
+                // Display the bot's reply
+                appendMessage(botReply, 'bot');
             } catch (error) {
                 console.error('Error fetching chatbot response:', error);
             }
+            
         }
     });
 
