@@ -33,7 +33,7 @@ jQuery(document).ready(function ($) {
                 }, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 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', // Replace with your actual API key
+                        'Authorization': 'Bearer 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',
                     },
                 });
             
