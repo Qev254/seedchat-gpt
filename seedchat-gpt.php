@@ -13,7 +13,7 @@ function seedchat_gpt_enqueue_scripts() {
     
     // Enqueue jQuery and JS file
     wp_enqueue_script('jquery');
-    wp_enqueue_script('seedchat-gpt-script', plugin_dir_url(__FILE__) . 'assets/js/SeedChat-GPT.js', array('jquery'), '3.4', true);
+    wp_enqueue_script('seedchat-gpt-script', plugin_dir_url(__FILE__) . 'assets/js/SeedChat-GPT.js', array('jquery'),, true);
 }
 add_action('wp_enqueue_scripts', 'seedchat_gpt_enqueue_scripts');
 
