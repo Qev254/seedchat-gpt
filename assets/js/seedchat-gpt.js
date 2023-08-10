@@ -33,13 +33,14 @@ jQuery(document).ready(function ($) {
                 }, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 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',
+                        'Authorization': 'Bearer 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',
                     },
                 });
             
                 // Get the bot's reply from the API response
                 const botReply = response.data.choices[0].message.content;
-            
+                const botReply = response.data.choices[0].message.content;
+
                 console.log(response);
 
                 // Display the bot's reply
