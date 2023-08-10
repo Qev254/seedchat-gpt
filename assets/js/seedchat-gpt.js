@@ -33,7 +33,7 @@ jQuery(document).ready(function ($) {
                 }, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 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',
+                        'Authorization': 'Bearer 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',
                     },
                 });
             
