@@ -39,7 +39,6 @@ jQuery(document).ready(function ($) {
             
                 // Get the bot's reply from the API response
                 const botReply = response.data.choices[0].message.content;
-                const botReply = response.data.choices[0].message.content;
 
                 console.log(response);
 
